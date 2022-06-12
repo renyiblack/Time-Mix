@@ -1,0 +1,335 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Map Background.png" type="Texture" id=1]
+[ext_resource path="res://06b.png" type="Texture" id=2]
+[ext_resource path="res://MAG.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/Battle.gd" type="Script" id=4]
+[ext_resource path="res://Battle Text.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Scripts/SmallDragon.tres" type="Resource" id=6]
+[ext_resource path="res://Animações/enemy_damaged.tres" type="Animation" id=7]
+[ext_resource path="res://Animações/MiniShake.tres" type="Animation" id=8]
+[ext_resource path="res://Animações/Angry.tres" type="Animation" id=9]
+[ext_resource path="res://Animações/Shake.tres" type="Animation" id=10]
+[ext_resource path="res://Animações/EnemyDefeated.tres" type="Animation" id=11]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 1, 0, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.705882, 0.0666667, 0.0666667, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0.819608 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.223529, 0.0784314, 0.0941176, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.0745098, 0.454902, 0.0352941, 1 )
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("EnemyCont/Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D:current")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -15, -18 ) ]
+}
+
+[node name="Battle" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+enemy = ExtResource( 6 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = -1.0
+margin_top = -2.0
+margin_right = 1024.0
+margin_bottom = 595.0
+rect_pivot_offset = Vector2( -73, 299 )
+texture = ExtResource( 1 )
+expand = true
+
+[node name="EnemyCont" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -88.0
+margin_top = -153.0
+margin_right = 89.0
+margin_bottom = 17.0
+alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="EnemyCont"]
+margin_right = 177.0
+margin_bottom = 38.0
+rect_pivot_offset = Vector2( 9, -82 )
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+value = 50.0
+percent_visible = false
+
+[node name="Label" type="Label" parent="EnemyCont/ProgressBar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -56.5
+margin_top = -12.0
+margin_right = 56.5
+margin_bottom = 12.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "HP: 25/50"
+align = 1
+valign = 1
+
+[node name="Enemy" type="TextureRect" parent="EnemyCont"]
+margin_top = 42.0
+margin_right = 177.0
+margin_bottom = 170.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="PlayerPanel" type="Panel" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -179.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="Actions" type="HBoxContainer" parent="PlayerPanel"]
+margin_left = 49.0
+margin_top = 53.0
+margin_right = 972.0
+margin_bottom = 157.0
+custom_constants/separation = 5
+
+[node name="Action" type="Button" parent="PlayerPanel/Actions"]
+margin_right = 304.0
+margin_bottom = 104.0
+rect_pivot_offset = Vector2( -220, -77 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+enabled_focus_mode = 0
+text = "ACTION"
+
+[node name="Guard" type="Button" parent="PlayerPanel/Actions"]
+margin_left = 309.0
+margin_right = 613.0
+margin_bottom = 104.0
+rect_pivot_offset = Vector2( -220, -77 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+enabled_focus_mode = 0
+text = "GUARD"
+
+[node name="Run" type="Button" parent="PlayerPanel/Actions"]
+margin_left = 618.0
+margin_right = 923.0
+margin_bottom = 104.0
+rect_pivot_offset = Vector2( -220, -77 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+enabled_focus_mode = 0
+text = "RUN"
+
+[node name="PlayerData" type="HBoxContainer" parent="PlayerPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -307.0
+margin_top = -82.5
+margin_right = 213.0
+margin_bottom = -43.5
+alignment = 1
+
+[node name="Label" type="Label" parent="PlayerPanel/PlayerData"]
+margin_top = 7.0
+margin_right = 103.0
+margin_bottom = 31.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "PLAYER: "
+
+[node name="ProgressBar" type="ProgressBar" parent="PlayerPanel/PlayerData"]
+anchor_left = -0.00192308
+anchor_right = -0.00192308
+margin_left = 107.0
+margin_right = 520.0
+margin_bottom = 39.0
+rect_pivot_offset = Vector2( 9, -82 )
+size_flags_horizontal = 11
+size_flags_vertical = 9
+size_flags_stretch_ratio = 1.05
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+value = 50.0
+percent_visible = false
+
+[node name="Label" type="Label" parent="PlayerPanel/PlayerData/ProgressBar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -56.5
+margin_top = -12.0
+margin_right = 56.5
+margin_bottom = 12.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "HP: 25/50"
+align = 1
+valign = 1
+
+[node name="ActionSelect" type="HBoxContainer" parent="PlayerPanel"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Attack" type="Button" parent="PlayerPanel/ActionSelect"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( -220, -77 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+enabled_focus_mode = 0
+text = "A"
+
+[node name="TextBox" type="Panel" parent="."]
+margin_left = 9.0
+margin_top = 430.0
+margin_right = 1005.0
+margin_bottom = 581.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="Label" type="Label" parent="TextBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 22.0
+margin_top = 9.0
+margin_bottom = -3.0
+custom_fonts/font = ExtResource( 5 )
+text = "A criatura selvagem me viu..., o que devo fazer?"
+
+[node name="Tick" type="Label" parent="TextBox"]
+margin_left = 971.0
+margin_top = 115.0
+margin_right = 1011.0
+margin_bottom = 149.0
+custom_fonts/font = ExtResource( 5 )
+text = ">"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Angry = ExtResource( 9 )
+anims/EnemyDefeated = ExtResource( 11 )
+anims/MiniShake = ExtResource( 8 )
+anims/RESET = SubResource( 8 )
+anims/Shake = ExtResource( 10 )
+anims/enemy_damaged = ExtResource( 7 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -15, -18 )
+anchor_mode = 0
+current = true
+
+[connection signal="pressed" from="PlayerPanel/Actions/Action" to="." method="_on_Action_pressed"]
+[connection signal="pressed" from="PlayerPanel/Actions/Guard" to="." method="_on_Guard_pressed"]
+[connection signal="pressed" from="PlayerPanel/Actions/Run" to="." method="_on_Run_pressed"]
+[connection signal="pressed" from="PlayerPanel/ActionSelect/Attack" to="." method="_on_Attack_pressed"]
