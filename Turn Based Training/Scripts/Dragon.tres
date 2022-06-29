@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/BaseEnemy.gd" type="Script" id=1]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/05b.png-d369e1d53f68de1a5e57017eae2d7c40.stex"
+
+[resource]
+script = ExtResource( 1 )
+name = "Mirror Dragon"
+texture = SubResource( 1 )
+health = 60
+damage = 20
+hit_rate = 80
