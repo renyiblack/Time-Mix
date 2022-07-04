@@ -5,23 +5,26 @@ onready var healed_gif = $healed
 var poison_time = 0
 var slow_time = 0
 var str_time = 0
-var current_player_health = 8
-var current_enemy_health = 8
-var current_enemy_hitrate = 8
+var res_time = 0
+var current_player_health = 8.0
+var current_enemy_health = 8.0
+var current_enemy_hitrate = 8.0
+var current_player_defrate = 8.0
+var is_resisting = false
 var is_defending = false
 var is_poisoned = false
 var is_slowed = false
 var is_str = false
 func _ready():
-	# Setar o HP do Inimigo e as Texturas
+# Setar o HP do Inimigo e as Texturas
 	set_health($EnemyCont/ProgressBar, enemy.health, enemy.health)
 	set_health($PlayerPanel/PlayerData/ProgressBar, State.current_health, State.max_health)
 	$EnemyCont/Enemy.texture = enemy.texture
-	
+	current_player_defrate = State.def_rate
 	current_enemy_hitrate = enemy.hit_rate
 	current_player_health = State.current_health
 	current_enemy_health = enemy.health
-	
+		
 	$TextBox.hide()
 	$PlayerPanel/Actions.hide()
 	display_text("Um %s selvagem apareceu o que devo fazer?" % enemy.name.to_upper())
@@ -52,14 +55,15 @@ func enemy_turn():
 	slow_pot()
 	$AnimationPlayer.play("Angry")
 	yield($AnimationPlayer, "animation_finished")
+	defend_pot()
 	if current_enemy_hitrate >= randi()%101:
 		if is_defending:
 			is_defending = false
 			$AnimationPlayer.play("MiniShake")
 			yield($AnimationPlayer, "animation_finished")
-			display_text("Voce bloqueia grande parte do ataque, recebendo apenas \n %d de dano" % (enemy.damage/4))
+			display_text("Voce bloqueia grande parte do ataque, recebendo apenas \n %d de dano" % ((enemy.damage/4)/current_player_defrate))
 			yield(self, "textbox_closed")
-			current_player_health = max(0, current_player_health - (enemy.damage/4))
+			current_player_health = max(0, current_player_health - (enemy.damage/4)/current_player_defrate)
 			set_health($PlayerPanel/PlayerData/ProgressBar, current_player_health, State.max_health)
 			poison()
 			if current_player_health == 0:
@@ -70,11 +74,11 @@ func enemy_turn():
 			$PlayerPanel/Actions.show()
 		
 		else:
-			current_player_health = max(0, current_player_health - enemy.damage)
+			current_player_health = max(0, current_player_health - enemy.damage/current_player_defrate)
 			set_health($PlayerPanel/PlayerData/ProgressBar, current_player_health, State.max_health)
 			$AnimationPlayer.play("Shake")
 			yield($AnimationPlayer, "animation_finished")
-			display_text("Lhe arranhando e causando %d de dano" % enemy.damage )
+			display_text("Lhe arranhando e causando %d de dano" % (enemy.damage / current_player_defrate) )
 			yield(self, "textbox_closed")
 			yield(get_tree().create_timer(0.10), "timeout")
 			poison()
@@ -242,6 +246,26 @@ func slow_pot():
 			yield(self, "textbox_closed")
 			$Blinded.hide()
 			is_slowed = false
+			
+			
+func defend_pot():
+	if is_resisting:
+		current_player_defrate = 2
+		display_text("Voce esta mais resistente!")
+		yield(self, "textbox_closed")
+		$AnimationPlayer.play("Defending")
+		yield($AnimationPlayer, "animation_finished")
+		res_time = res_time + 1
+		if res_time == 3:
+			display_text("Sua resistencia acabou!")
+			yield(self, "textbox_closed")
+			current_player_defrate = 1
+			is_resisting = false
+	else:
+		pass
+		
+		
+		
 
 		
 func _on_Potion2_pressed():
@@ -279,4 +303,17 @@ func _on_Potion4_pressed():
 	display_text("O Seu ataque aumentou!")
 	is_str = true
 	str_time = 0
+	enemy_turn()
+
+
+func _on_Potion5_pressed():
+	$PlayerPanel/Potions.hide()
+	display_text("Sua pele enrijece!")
+	yield(self, "textbox_closed")
+	$AnimationPlayer.play("Defending")
+	yield($AnimationPlayer, "animation_finished")
+	display_text("Agora você esta mais resistente!")
+	yield(self, "textbox_closed")
+	is_resisting = true
+	res_time = 0
 	enemy_turn()

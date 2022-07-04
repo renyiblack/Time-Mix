@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Control",
+"class": "MoveSet",
+"language": "GDScript",
+"path": "res://Scripts/Moveset.gd"
+} ]
+_global_script_class_icons={
+"MoveSet": ""
+}
+
 [application]
 
 config/name="Turn Based Training"
