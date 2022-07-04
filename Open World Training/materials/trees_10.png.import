@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dirt.png-75f123c1b485b03089013319397570c9.stex"
+path="res://.import/trees_10.png-8972533053d4280702981084a2c5f0c1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://materials/dirt.png"
-dest_files=[ "res://.import/dirt.png-75f123c1b485b03089013319397570c9.stex" ]
+source_file="res://materials/trees_10.png"
+dest_files=[ "res://.import/trees_10.png-8972533053d4280702981084a2c5f0c1.stex" ]
 
 [params]
 
