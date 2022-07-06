@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hit Super Effective.mp3-28e0540645f71b38a6b02768ce6f2ee6.mp3str"
+
+[deps]
+
+source_file="res://Audio/Hit Super Effective.mp3"
+dest_files=[ "res://.import/Hit Super Effective.mp3-28e0540645f71b38a6b02768ce6f2ee6.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

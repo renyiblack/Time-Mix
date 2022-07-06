@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hit Normal Damage.mp3-367068f4f495779122b8d7d56139df01.mp3str"
+
+[deps]
+
+source_file="res://Audio/Hit Normal Damage.mp3"
+dest_files=[ "res://.import/Hit Normal Damage.mp3-367068f4f495779122b8d7d56139df01.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

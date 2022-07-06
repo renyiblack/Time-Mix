@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Crush Claw.mp3-e803444d05a8227cb84755c557521fd4.mp3str"
+
+[deps]
+
+source_file="res://Audio/Crush Claw.mp3"
+dest_files=[ "res://.import/Crush Claw.mp3-e803444d05a8227cb84755c557521fd4.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

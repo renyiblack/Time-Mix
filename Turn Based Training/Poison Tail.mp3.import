@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Poison Tail.mp3-e5970812210db7846e53ed196cd56182.mp3str"
+
+[deps]
+
+source_file="res://Poison Tail.mp3"
+dest_files=[ "res://.import/Poison Tail.mp3-e5970812210db7846e53ed196cd56182.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

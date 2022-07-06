@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Toxic.mp3-cc4745505610b36e6e7aa681dd49fea2.mp3str"
+
+[deps]
+
+source_file="res://Audio/Toxic.mp3"
+dest_files=[ "res://.import/Toxic.mp3-cc4745505610b36e6e7aa681dd49fea2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
