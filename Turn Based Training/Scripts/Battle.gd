@@ -123,7 +123,7 @@ func _on_Attack_pressed():
 		display_text("Bom trabalho!")
 		yield(self, "textbox_closed")
 		yield(get_tree().create_timer(0.25), "timeout")
-		get_tree().quit()
+		get_tree().change_scene("res://Cenas/Menu.tscn")
 	else:
 		playpoison()
 		enemy_turn()
@@ -195,7 +195,7 @@ func poison():
 			display_text("Bom trabalho!")
 			yield(self, "textbox_closed")
 			yield(get_tree().create_timer(0.25), "timeout")
-			get_tree().quit()
+			get_tree().change_scene("res://Cenas/Menu.tscn")
 		if poison_time == 2:
 			display_text("%s nao esta mais envenenado!" % enemy.name.to_upper())
 			yield(self, "textbox_closed")
@@ -217,7 +217,7 @@ func playpoison():
 				display_text("Que pena!, voce foi derrotado!")
 				yield(self, "textbox_closed")
 				yield(get_tree().create_timer(0.50), "timeout")
-				get_tree().quit()
+				get_tree().change_scene("res://Cenas/Menu.tscn")
 		if poison_time == 2:
 			display_text("Voce nao esta mais envenenado!")
 			yield(self, "textbox_closed")
@@ -358,7 +358,7 @@ func poison_strike():
 					display_text("Que pena!, voce foi derrotado!")
 					yield(self, "textbox_closed")
 					yield(get_tree().create_timer(0.50), "timeout")
-					get_tree().quit()
+					get_tree().change_scene("res://Cenas/Menu.tscn")
 				$PlayerPanel/Actions.show()
 		
 			else:
@@ -380,8 +380,7 @@ func poison_strike():
 				display_text("Que pena!, voce foi derrotado!")
 				yield(self, "textbox_closed")
 				yield(get_tree().create_timer(0.50), "timeout")
-				get_tree().quit()
-				$PlayerPanel/Actions.show()
+				get_tree().change_scene("res://Cenas/Menu.tscn")
 
 	else:
 			display_text("O inimigo errou o ataque" )
@@ -423,7 +422,7 @@ func bite_attack():
 					display_text("Que pena!, voce foi derrotado!")
 					yield(self, "textbox_closed")
 					yield(get_tree().create_timer(0.50), "timeout")
-					get_tree().quit()
+					get_tree().change_scene("res://Cenas/Menu.tscn")
 				$PlayerPanel/Actions.show()
 		
 			else:
@@ -441,8 +440,7 @@ func bite_attack():
 				display_text("Que pena!, voce foi derrotado!")
 				yield(self, "textbox_closed")
 				yield(get_tree().create_timer(0.50), "timeout")
-				get_tree().quit()
-				$PlayerPanel/Actions.show()
+				get_tree().change_scene("res://Cenas/Menu.tscn")
 	else:
 			display_text("O inimigo errou o ataque" )
 			yield(self, "textbox_closed")
@@ -473,7 +471,7 @@ func claw_attack():
 				display_text("Que pena!, voce foi derrotado!")
 				yield(self, "textbox_closed")
 				yield(get_tree().create_timer(0.50), "timeout")
-				get_tree().quit()
+				get_tree().change_scene("res://Cenas/Menu.tscn")
 			$PlayerPanel/Actions.show()
 		
 		else:
@@ -490,7 +488,7 @@ func claw_attack():
 				display_text("Que pena!, voce foi derrotado!")
 				yield(self, "textbox_closed")
 				yield(get_tree().create_timer(0.50), "timeout")
-				get_tree().quit()
+				get_tree().change_scene("res://Cenas/Menu.tscn")
 			$PlayerPanel/Actions.show()
 
 	else:
@@ -523,7 +521,7 @@ func charged_attack():
 				display_text("Que pena!, voce foi derrotado!")
 				yield(self, "textbox_closed")
 				yield(get_tree().create_timer(0.50), "timeout")
-				get_tree().quit()
+				get_tree().change_scene("res://Cenas/Menu.tscn")
 			$PlayerPanel/Actions.show()
 		
 		else:
@@ -540,7 +538,7 @@ func charged_attack():
 				display_text("Que pena!, voce foi derrotado!")
 				yield(self, "textbox_closed")
 				yield(get_tree().create_timer(0.50), "timeout")
-				get_tree().quit()
+				get_tree().change_scene("res://Cenas/Menu.tscn")
 			$PlayerPanel/Actions.show()
 
 	else:
