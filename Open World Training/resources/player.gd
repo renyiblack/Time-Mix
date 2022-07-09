@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
-onready var player = get_node("/root/tutorial/TileMap/player")
+onready var player = get_node("/root/island/TileMap/player")
 onready var camera = player.get_node("Camera2D")
+onready var compendium = get_node("/root/island/TileMap/Compendium")
 
 var velocity = Vector2.ZERO
 const max_speed = 250
@@ -15,8 +16,13 @@ func _physics_process(delta):
 	vector.y = Input.get_action_strength("ui_down")-Input.get_action_strength("ui_up")
 	vector = vector.normalized()
 	if vector!=Vector2.ZERO:
+		$AnimationPlayer.play("moving")
 		velocity=vector*max_speed
 	else:
 		velocity = Vector2.ZERO
 		
 	velocity = move_and_slide(velocity)
+
+
+func _on_compendium_body_entered(body):
+	compendium.queue_free()
