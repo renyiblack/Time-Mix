@@ -2,6 +2,9 @@ extends Control
 export(Resource) var enemy = null
 signal textbox_closed
 onready var healed_gif = $healed
+onready var actbutton = $PlayerPanel/Actions/Action
+onready var atkbutton = $PlayerPanel/ActionSelect/Attack
+onready var potbutton = $PlayerPanel/Potions/Potion2
 var poison_time = 0
 var poison_time2 = 0
 var slow_time = 0
@@ -18,6 +21,8 @@ var play_poisoned = false
 var is_slowed = false
 var is_str = false
 var enemy_action = 0
+
+
 func _ready():
 # Setar o HP do Inimigo e as Texturas
 	set_health($EnemyCont/ProgressBar, enemy.health, enemy.health)
@@ -33,7 +38,7 @@ func _ready():
 	display_text("Um %s selvagem apareceu o que devo fazer?" % enemy.name.to_upper())
 	yield(self, "textbox_closed")
 	$PlayerPanel/Actions.show()
-	
+	actbutton.grab_focus()
 	
 func set_health(progress_bar, health, max_health):
 	progress_bar.value = health
@@ -146,6 +151,7 @@ func _on_Action_pressed():
 	$PlayerPanel/Actions.hide()
 	$ButtonSfx.play()
 	$PlayerPanel/ActionSelect.show()
+	atkbutton.grab_focus()
 	
 
 
@@ -153,6 +159,7 @@ func _on_Return_pressed():
 	$PlayerPanel/ActionSelect.hide()
 	$ButtonSfx.play()
 	$PlayerPanel/Actions.show()
+	actbutton.grab_focus()
 	
 
 
@@ -282,12 +289,14 @@ func _on_Potions_pressed():
 	$PlayerPanel/ActionSelect.hide()
 	$ButtonSfx.play()
 	$PlayerPanel/Potions.show()
+	potbutton.grab_focus()
 
 
 func _on_Return2_pressed():
 	$PlayerPanel/Potions.hide()
 	$ButtonSfx.play()
 	$PlayerPanel/ActionSelect.show()
+	atkbutton.grab_focus()
 
 
 func _on_Potion3_pressed():
@@ -360,6 +369,7 @@ func poison_strike():
 					yield(get_tree().create_timer(0.50), "timeout")
 					get_tree().change_scene("res://Cenas/Menu.tscn")
 				$PlayerPanel/Actions.show()
+				actbutton.grab_focus()
 		
 			else:
 				$PoisonStrike.play()
@@ -376,6 +386,7 @@ func poison_strike():
 				current_player_health = max(0, current_player_health - enemy.damage/current_player_defrate)
 				set_health($PlayerPanel/PlayerData/ProgressBar, current_player_health, State.max_health)
 				$PlayerPanel/Actions.show()
+				actbutton.grab_focus()
 			if current_player_health == 0:
 				display_text("Que pena!, voce foi derrotado!")
 				yield(self, "textbox_closed")
@@ -387,6 +398,7 @@ func poison_strike():
 			yield(self, "textbox_closed")
 			poison()
 			$PlayerPanel/Actions.show()
+			actbutton.grab_focus()
 	
 
 func PowerUp():
@@ -398,6 +410,7 @@ func PowerUp():
 	enemy.enemy_power_up = true
 	poison()
 	$PlayerPanel/Actions.show()
+	actbutton.grab_focus()
 
 
 func bite_attack():
@@ -424,6 +437,7 @@ func bite_attack():
 					yield(get_tree().create_timer(0.50), "timeout")
 					get_tree().change_scene("res://Cenas/Menu.tscn")
 				$PlayerPanel/Actions.show()
+				actbutton.grab_focus()
 		
 			else:
 				current_player_health = max(0, current_player_health - enemy.damage/current_player_defrate)
@@ -436,6 +450,7 @@ func bite_attack():
 				yield(get_tree().create_timer(0.10), "timeout")
 				poison()
 				$PlayerPanel/Actions.show()
+				actbutton.grab_focus()
 			if current_player_health == 0:
 				display_text("Que pena!, voce foi derrotado!")
 				yield(self, "textbox_closed")
@@ -446,6 +461,7 @@ func bite_attack():
 			yield(self, "textbox_closed")
 			poison()
 			$PlayerPanel/Actions.show()
+			actbutton.grab_focus()
 			
 func claw_attack():
 	display_text("Turno do %s" % enemy.name)
@@ -473,6 +489,7 @@ func claw_attack():
 				yield(get_tree().create_timer(0.50), "timeout")
 				get_tree().change_scene("res://Cenas/Menu.tscn")
 			$PlayerPanel/Actions.show()
+			actbutton.grab_focus()
 		
 		else:
 			current_player_health = max(0, current_player_health - enemy.damage/current_player_defrate)
@@ -490,12 +507,14 @@ func claw_attack():
 				yield(get_tree().create_timer(0.50), "timeout")
 				get_tree().change_scene("res://Cenas/Menu.tscn")
 			$PlayerPanel/Actions.show()
+			actbutton.grab_focus()
 
 	else:
 			display_text("O inimigo errou o ataque" )
 			yield(self, "textbox_closed")
 			poison()
 			$PlayerPanel/Actions.show()
+			actbutton.grab_focus()
 func charged_attack():
 	display_text("Turno do %s" % enemy.name)
 	yield(self,"textbox_closed")
@@ -523,6 +542,7 @@ func charged_attack():
 				yield(get_tree().create_timer(0.50), "timeout")
 				get_tree().change_scene("res://Cenas/Menu.tscn")
 			$PlayerPanel/Actions.show()
+			actbutton.grab_focus()
 		
 		else:
 			current_player_health = max(0, current_player_health - enemy.damage*2/current_player_defrate)
@@ -540,12 +560,14 @@ func charged_attack():
 				yield(get_tree().create_timer(0.50), "timeout")
 				get_tree().change_scene("res://Cenas/Menu.tscn")
 			$PlayerPanel/Actions.show()
+			actbutton.grab_focus()
 
 	else:
 			display_text("O inimigo errou o ataque" )
 			yield(self, "textbox_closed")
 			poison()
 			$PlayerPanel/Actions.show()
+			actbutton.grab_focus()
 
 func choose(array):
 	return array[randi() % array.size()]

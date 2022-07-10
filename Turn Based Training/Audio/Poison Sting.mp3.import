@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Poison Sting.mp3-a4e35248f2159dae7a32a357a8fde74a.mp3str"
+
+[deps]
+
+source_file="res://Audio/Poison Sting.mp3"
+dest_files=[ "res://.import/Poison Sting.mp3-a4e35248f2159dae7a32a357a8fde74a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

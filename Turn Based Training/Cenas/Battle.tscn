@@ -26,7 +26,7 @@
 [ext_resource path="res://Audio/X2Download.com-Donkey Kong Country - Stage Clear-(128kbps).ogg" type="AudioStream" id=24]
 [ext_resource path="res://Blinded PNG.png" type="Texture" id=25]
 [ext_resource path="res://Audio/Stat Fall.mp3" type="AudioStream" id=26]
-[ext_resource path="res://Poison Sting.mp3" type="AudioStream" id=27]
+[ext_resource path="res://Audio/Poison Sting.mp3" type="AudioStream" id=27]
 [ext_resource path="res://Audio/Toxic.mp3" type="AudioStream" id=28]
 [ext_resource path="res://Audio/Heal Pulse.mp3" type="AudioStream" id=29]
 [ext_resource path="res://Audio/Crush Claw.mp3" type="AudioStream" id=30]
@@ -36,6 +36,7 @@
 [ext_resource path="res://Audio/X2Download.com-Action 16-bit Chiptune _ Background Music for Games _ Jungle Act-(128kbps).ogg" type="AudioStream" id=34]
 [ext_resource path="res://Audio/Hit Normal Damage.mp3" type="AudioStream" id=35]
 [ext_resource path="res://Audio/Hit Super Effective.mp3" type="AudioStream" id=36]
+[ext_resource path="res://boxcolor.tres" type="StyleBox" id=37]
 
 [sub_resource type="Theme" id=10]
 
@@ -57,9 +58,6 @@ border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0, 0, 0, 0.698039 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0, 0, 0, 1 )
@@ -273,17 +271,22 @@ custom_constants/separation = 5
 margin_right = 305.0
 margin_bottom = 104.0
 rect_pivot_offset = Vector2( -220, -77 )
-focus_mode = 0
+focus_neighbour_left = NodePath("../Run")
+focus_neighbour_right = NodePath("../Guard")
+focus_next = NodePath("../Guard")
+focus_previous = NodePath("../Run")
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
+custom_styles/hover = ExtResource( 37 )
+custom_styles/pressed = ExtResource( 37 )
+custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-enabled_focus_mode = 0
+action_mode = 0
 text = "Action"
 
 [node name="Guard" type="Button" parent="PlayerPanel/Actions"]
@@ -291,17 +294,21 @@ margin_left = 310.0
 margin_right = 616.0
 margin_bottom = 104.0
 rect_pivot_offset = Vector2( -220, -77 )
-focus_mode = 0
+focus_neighbour_left = NodePath("../Action")
+focus_neighbour_right = NodePath("../Run")
+focus_next = NodePath("../Run")
+focus_previous = NodePath("../Action")
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
+custom_styles/hover = ExtResource( 37 )
+custom_styles/pressed = ExtResource( 37 )
+custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-enabled_focus_mode = 0
 text = "Guard"
 
 [node name="Run" type="Button" parent="PlayerPanel/Actions"]
@@ -309,17 +316,19 @@ margin_left = 621.0
 margin_right = 927.0
 margin_bottom = 104.0
 rect_pivot_offset = Vector2( -220, -77 )
-focus_mode = 0
+focus_neighbour_left = NodePath("../Guard")
+focus_neighbour_right = NodePath("../Action")
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
+custom_styles/hover = ExtResource( 37 )
+custom_styles/pressed = ExtResource( 37 )
+custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-enabled_focus_mode = 0
 text = "Run"
 
 [node name="PlayerData" type="HBoxContainer" parent="PlayerPanel"]
@@ -381,17 +390,17 @@ margin_bottom = 155.0
 margin_right = 309.0
 margin_bottom = 102.0
 rect_pivot_offset = Vector2( -220, -77 )
-focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
+custom_styles/hover = ExtResource( 37 )
+custom_styles/pressed = ExtResource( 37 )
+custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-enabled_focus_mode = 0
 text = "Attack"
 
 [node name="Potions" type="Button" parent="PlayerPanel/ActionSelect"]
@@ -399,17 +408,17 @@ margin_left = 313.0
 margin_right = 622.0
 margin_bottom = 102.0
 rect_pivot_offset = Vector2( -220, -77 )
-focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
+custom_styles/hover = ExtResource( 37 )
+custom_styles/pressed = ExtResource( 37 )
+custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-enabled_focus_mode = 0
 text = "Potions"
 
 [node name="Return" type="Button" parent="PlayerPanel/ActionSelect"]
@@ -417,17 +426,17 @@ margin_left = 626.0
 margin_right = 935.0
 margin_bottom = 102.0
 rect_pivot_offset = Vector2( -220, -77 )
-focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
+custom_styles/hover = ExtResource( 37 )
+custom_styles/pressed = ExtResource( 37 )
+custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-enabled_focus_mode = 0
 text = "Return"
 
 [node name="Potions" type="HBoxContainer" parent="PlayerPanel"]
@@ -441,17 +450,17 @@ margin_bottom = 150.0
 margin_right = 175.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( -775, -231 )
-focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0.0392157, 1, 0.0313726, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
+custom_styles/hover = ExtResource( 37 )
+custom_styles/pressed = ExtResource( 37 )
+custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-enabled_focus_mode = 0
 text = "Healing Potion"
 
 [node name="Potion" type="Button" parent="PlayerPanel/Potions"]
@@ -459,17 +468,17 @@ margin_left = 179.0
 margin_right = 341.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( -775, -231 )
-focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 0, 0.917647, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
+custom_styles/hover = ExtResource( 37 )
+custom_styles/pressed = ExtResource( 37 )
+custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-enabled_focus_mode = 0
 text = "Poison Potion"
 
 [node name="Potion3" type="Button" parent="PlayerPanel/Potions"]
@@ -477,17 +486,17 @@ margin_left = 345.0
 margin_right = 543.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( -775, -231 )
-focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0.00784314, 0.309804, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
+custom_styles/hover = ExtResource( 37 )
+custom_styles/pressed = ExtResource( 37 )
+custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-enabled_focus_mode = 0
 text = "Blindness Potion"
 
 [node name="Potion4" type="Button" parent="PlayerPanel/Potions"]
@@ -495,17 +504,17 @@ margin_left = 547.0
 margin_right = 729.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( -775, -231 )
-focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
+custom_styles/hover = ExtResource( 37 )
+custom_styles/pressed = ExtResource( 37 )
+custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-enabled_focus_mode = 0
 text = "Strengh Potion"
 
 [node name="Potion5" type="Button" parent="PlayerPanel/Potions"]
@@ -513,17 +522,17 @@ margin_left = 733.0
 margin_right = 915.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( -775, -231 )
-focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 1, 0.937255, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
+custom_styles/hover = ExtResource( 37 )
+custom_styles/pressed = ExtResource( 37 )
+custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-enabled_focus_mode = 0
 text = "Defense Potion"
 
 [node name="Return2" type="Button" parent="PlayerPanel/Potions"]
@@ -531,18 +540,18 @@ margin_left = 919.0
 margin_right = 1008.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( -220, -77 )
-focus_mode = 0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
+custom_styles/hover = ExtResource( 37 )
+custom_styles/pressed = ExtResource( 37 )
+custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-enabled_focus_mode = 0
 text = "Return"
 
 [node name="TextBox" type="Panel" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://MenuGIF/frame_06_delay-0.05s.jpg" type="Texture" id=1]
 [ext_resource path="res://MenuGIF/TribalGaramond-xvWj.ttf" type="DynamicFontData" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://MenuGIF/frame_08_delay-0.05s.jpg" type="Texture" id=12]
 [ext_resource path="res://MenuGIF/MenuSfx.ogg" type="AudioStream" id=13]
 [ext_resource path="res://Animações/WhiteTextFade.tres" type="Animation" id=14]
+[ext_resource path="res://SoundOn.png" type="Texture" id=15]
+[ext_resource path="res://SoundOff.png" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -114,6 +116,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("CanvasLayer/SoundOn:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CanvasLayer/SoundOn:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=10]
 resource_name = "TextFade"
@@ -133,8 +159,37 @@ tracks/0/keys = {
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SoundOn" type="TextureButton" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 907.0
+margin_top = 32.0
+margin_right = 883.0
+margin_bottom = 512.0
+rect_scale = Vector2( 0.0979409, 0.0912331 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 15 )
+
+[node name="SoundOff" type="TextureButton" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 907.0
+margin_top = 32.0
+margin_right = 883.0
+margin_bottom = 512.0
+rect_scale = Vector2( 0.0979409, 0.0912331 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 16 )
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 margin_left = 18.0
@@ -155,6 +210,9 @@ margin_top = -78.0
 margin_right = 484.0
 margin_bottom = 9.0
 rect_pivot_offset = Vector2( 203, 44 )
+focus_neighbour_top = NodePath("../EXIT")
+focus_neighbour_bottom = NodePath("../Load")
+custom_colors/font_color_focus = Color( 1, 0.431373, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 0 )
 custom_colors/font_color_hover = Color( 1, 0.494118, 0, 1 )
 custom_fonts/font = SubResource( 3 )
@@ -174,6 +232,9 @@ margin_top = 27.0
 margin_right = 484.0
 margin_bottom = 114.0
 rect_pivot_offset = Vector2( 203, 44 )
+focus_neighbour_top = NodePath("../NEWGAME")
+focus_neighbour_bottom = NodePath("../EXIT")
+custom_colors/font_color_focus = Color( 1, 0.431373, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 0 )
 custom_colors/font_color_hover = Color( 1, 0.470588, 0, 1 )
 custom_fonts/font = SubResource( 3 )
@@ -193,7 +254,10 @@ margin_top = 138.0
 margin_right = 484.0
 margin_bottom = 225.0
 rect_pivot_offset = Vector2( -568, -183 )
+focus_neighbour_top = NodePath("../Load")
+focus_neighbour_bottom = NodePath("../NEWGAME")
 mouse_default_cursor_shape = 2
+custom_colors/font_color_focus = Color( 1, 0.431373, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 0 )
 custom_colors/font_color_hover = Color( 1, 0.431373, 0, 1 )
 custom_fonts/font = SubResource( 3 )
@@ -207,7 +271,7 @@ text = "EXIT"
 position = Vector2( 510.5, 299.5 )
 scale = Vector2( 0.97619, 1.10556 )
 frames = SubResource( 6 )
-frame = 6
+frame = 4
 playing = true
 
 [node name="MenuSFX" type="AudioStreamPlayer" parent="."]
@@ -220,5 +284,7 @@ anims/RESET = SubResource( 9 )
 anims/TextFade = SubResource( 10 )
 anims/WhiteTextFade = ExtResource( 14 )
 
+[connection signal="pressed" from="CanvasLayer/SoundOn" to="." method="_on_SoundOn_pressed"]
+[connection signal="pressed" from="CanvasLayer/SoundOff" to="." method="_on_SoundOff_pressed"]
 [connection signal="pressed" from="CanvasLayer/NEWGAME" to="." method="_on_NEWGAME_pressed"]
 [connection signal="pressed" from="CanvasLayer/EXIT" to="." method="_on_EXIT_pressed"]

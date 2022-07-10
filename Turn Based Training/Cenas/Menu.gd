@@ -1,6 +1,5 @@
 extends Node2D
-
-
+onready var ngbutton = $CanvasLayer/NEWGAME
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -11,6 +10,8 @@ func _ready():
 	$AnimationPlayer.play("TextFade")
 	yield($AnimationPlayer, "animation_finished")
 	$AnimationPlayer.play("WhiteTextFade")
+	yield($AnimationPlayer, "animation_finished")
+	ngbutton.grab_focus()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -23,3 +24,17 @@ func _on_EXIT_pressed():
 
 func _on_NEWGAME_pressed():
 	get_tree().change_scene("res://Cenas/Battle.tscn")
+
+
+func _on_SoundOn_pressed():
+	$CanvasLayer/SoundOn.hide()
+	$MenuSFX.stop()
+	$CanvasLayer/SoundOff.show()
+	ngbutton.grab_focus()
+
+
+func _on_SoundOff_pressed():
+	$CanvasLayer/SoundOff.hide()
+	$MenuSFX.play()
+	$CanvasLayer/SoundOn.show()
+	ngbutton.grab_focus()
