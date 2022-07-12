@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-onready var player = get_node("/root/island/TileMap/player")
+onready var player = get_node("/root/island/Ground/player")
 onready var camera = player.get_node("Camera2D")
-onready var compendium = get_node("/root/island/TileMap/Compendium")
+onready var compendium = get_node("/root/island/Ground/Compendium")
 
 var velocity = Vector2.ZERO
 const max_speed = 250
