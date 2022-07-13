@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Turn Based Training"
-run/main_scene="res://Cenas/Menu.tscn"
+run/main_scene="res://Cenas/Book.tscn"
 run/low_processor_mode=true
 config/icon="res://icon.png"
 
