@@ -36,7 +36,7 @@
 [ext_resource path="res://Audio/X2Download.com-Action 16-bit Chiptune _ Background Music for Games _ Jungle Act-(128kbps).ogg" type="AudioStream" id=34]
 [ext_resource path="res://Audio/Hit Normal Damage.mp3" type="AudioStream" id=35]
 [ext_resource path="res://Audio/Hit Super Effective.mp3" type="AudioStream" id=36]
-[ext_resource path="res://boxcolor.tres" type="StyleBox" id=37]
+[ext_resource path="res://Fonts And Presets/boxcolor.tres" type="StyleBox" id=37]
 
 [sub_resource type="Theme" id=10]
 
