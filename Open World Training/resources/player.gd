@@ -6,6 +6,8 @@ onready var compendium = get_node("/root/island/Ground/Compendium")
 
 var velocity = Vector2.ZERO
 const max_speed = 250
+var just_spawned = true
+var generate_mob = false
 var plant_sprite
 
 func _ready():
@@ -13,6 +15,7 @@ func _ready():
 
 func _physics_process(delta):
 	var vector = Vector2.ZERO
+	
 	if(Input.is_action_just_pressed("ui_interact")):
 		if(plant_sprite != null):
 			var alpha = (plant_sprite as ColorRect).color.a
@@ -27,13 +30,32 @@ func _physics_process(delta):
 	vector.x = Input.get_action_strength("ui_right")-Input.get_action_strength("ui_left")
 	vector.y = Input.get_action_strength("ui_down")-Input.get_action_strength("ui_up")
 	vector = vector.normalized()
+	
+	
 	if vector!=Vector2.ZERO:
 		$AnimationPlayer.play("moving")
+		spawn_mob()
 		velocity=vector*max_speed
 	else:
 		velocity = Vector2.ZERO
 		
 	velocity = move_and_slide(velocity)
+
+func spawn_mob():
+	var rng = RandomNumberGenerator.new()
+	if(just_spawned):
+		generate_mob = false
+		just_spawned = false
+
+	if(generate_mob):
+		rng.randomize()
+		var number = rng.randi_range(0, 100)
+		if(number>99):
+			# generate_mob = false
+			print("mob spawned")
+		else:
+			# generate_mob = true
+			print("mob not spawned")
 
 
 func _on_compendium_body_entered(body):
@@ -138,3 +160,11 @@ func _on_Plant24_body_entered(body):
 
 func _on_Plant25_body_entered(body):
 	plant_sprite = get_node("/root/island/Ground/Garden/Plant25/ColorRect")
+
+
+func _on_SpawnMob_body_entered(body):
+	generate_mob = true
+
+
+func _on_SpawnMob_body_exited(body):
+	generate_mob = false
