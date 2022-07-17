@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Poison Powder.mp3-beda64ed35f26284310673ac7a47f5c1.mp3str"
+
+[deps]
+
+source_file="res://Audio/Poison Powder.mp3"
+dest_files=[ "res://.import/Poison Powder.mp3-beda64ed35f26284310673ac7a47f5c1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

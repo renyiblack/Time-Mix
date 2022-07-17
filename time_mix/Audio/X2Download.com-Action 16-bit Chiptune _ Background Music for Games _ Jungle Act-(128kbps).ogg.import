@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/X2Download.com-Action 16-bit Chiptune _ Background Music for Games _ Jungle Act-(128kbps).ogg-fa755d43376fd71fcdcf659a2bd42b78.oggstr"
+
+[deps]
+
+source_file="res://Audio/X2Download.com-Action 16-bit Chiptune _ Background Music for Games _ Jungle Act-(128kbps).ogg"
+dest_files=[ "res://.import/X2Download.com-Action 16-bit Chiptune _ Background Music for Games _ Jungle Act-(128kbps).ogg-fa755d43376fd71fcdcf659a2bd42b78.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

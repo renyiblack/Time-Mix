@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hidden Power.mp3-01b42f55409809df966eb29e2e4843ea.mp3str"
+
+[deps]
+
+source_file="res://Audio/Hidden Power.mp3"
+dest_files=[ "res://.import/Hidden Power.mp3-01b42f55409809df966eb29e2e4843ea.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

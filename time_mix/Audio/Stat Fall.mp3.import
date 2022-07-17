@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Stat Fall.mp3-d7a3f7bbc104488c9d9bcc8fba0a03a1.mp3str"
+
+[deps]
+
+source_file="res://Audio/Stat Fall.mp3"
+dest_files=[ "res://.import/Stat Fall.mp3-d7a3f7bbc104488c9d9bcc8fba0a03a1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Poison Gas.mp3-6033b656297e96fcc1117f37e7d4dd23.mp3str"
+
+[deps]
+
+source_file="res://Audio/Poison Gas.mp3"
+dest_files=[ "res://.import/Poison Gas.mp3-6033b656297e96fcc1117f37e7d4dd23.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
