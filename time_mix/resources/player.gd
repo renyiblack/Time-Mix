@@ -3,6 +3,7 @@ extends KinematicBody2D
 onready var player = get_node("/root/island/Ground/player")
 onready var camera = player.get_node("Camera2D")
 onready var compendium = get_node("/root/island/Ground/Compendium")
+var battle = preload("res://Cenas/Battle.tscn").instance()
 
 var velocity = Vector2.ZERO
 const max_speed = 250
@@ -12,6 +13,7 @@ var plant_sprite
 
 func _ready():
 	camera.current = true
+	position = State.player_location
 
 func _physics_process(delta):
 	var vector = Vector2.ZERO
@@ -51,6 +53,7 @@ func spawn_mob():
 		rng.randomize()
 		var number = rng.randi_range(0, 100)
 		if(number>99):
+			State.player_location = position
 			get_tree().change_scene("res://Cenas/Battle.tscn")
 			print("mob spawned")
 

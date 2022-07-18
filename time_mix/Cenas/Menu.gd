@@ -23,7 +23,7 @@ func _on_EXIT_pressed():
 
 
 func _on_NEWGAME_pressed():
-	get_tree().change_scene("res://Cenas/Battle.tscn")
+	get_tree().change_scene("res://Cenas/tutorial.tscn")
 
 
 func _on_SoundOn_pressed():

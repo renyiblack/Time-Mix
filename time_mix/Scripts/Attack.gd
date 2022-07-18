@@ -23,6 +23,6 @@ func action_attack():
 		display_text("Bom trabalho!")
 		yield(self, "textbox_closed")
 		yield(get_tree().create_timer(0.25), "timeout")
-		get_tree().quit()
+		get_tree().change_scene("res://Cenas/tutorial.tscn")
 	else:
 		enemy_turn()

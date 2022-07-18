@@ -78,7 +78,7 @@ func _on_Run_pressed():
 	display_text("Voce conseguiu escapar!")
 	yield(self, "textbox_closed")
 	yield(get_tree().create_timer(0.50), "timeout")
-	get_tree().quit()
+	get_tree().change_scene("res://Cenas/tutorial.tscn")
 
 
 func _on_Attack_pressed():
@@ -128,7 +128,7 @@ func _on_Attack_pressed():
 		display_text("Bom trabalho!")
 		yield(self, "textbox_closed")
 		yield(get_tree().create_timer(0.25), "timeout")
-		get_tree().change_scene("res://Cenas/Menu.tscn")
+		get_tree().change_scene("res://Cenas/tutorial.tscn")
 	else:
 		playpoison()
 		enemy_turn()

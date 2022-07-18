@@ -21,8 +21,12 @@ _global_script_class_icons={
 [application]
 
 config/name="time_mix"
-run/main_scene="res://.import/tutorial.tscn"
+run/main_scene="res://Cenas/Menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+State="*res://Scripts/State.gd"
 
 [global]
 

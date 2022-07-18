@@ -5,6 +5,7 @@ var max_health = 50.0
 var damage = 15.0
 var hit_rate = 95.0
 var def_rate = 1.0
+var player_location = Vector2(-651,451)
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
