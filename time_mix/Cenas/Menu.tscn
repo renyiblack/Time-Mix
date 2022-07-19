@@ -271,7 +271,7 @@ text = "EXIT"
 position = Vector2( 510.5, 299.5 )
 scale = Vector2( 0.97619, 1.10556 )
 frames = SubResource( 6 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="MenuSFX" type="AudioStreamPlayer" parent="."]

@@ -202,7 +202,7 @@ func poison():
 			display_text("Bom trabalho!")
 			yield(self, "textbox_closed")
 			yield(get_tree().create_timer(0.25), "timeout")
-			get_tree().change_scene("res://Cenas/Menu.tscn")
+			get_tree().change_scene("res://Cenas/tutorial.tscn")
 		if poison_time == 2:
 			display_text("%s nao esta mais envenenado!" % enemy.name.to_upper())
 			yield(self, "textbox_closed")

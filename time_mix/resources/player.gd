@@ -1,5 +1,6 @@
 extends KinematicBody2D
-
+onready var playermoves = $Player
+onready var movetracker = 0
 onready var player = get_node("/root/island/Ground/player")
 onready var camera = player.get_node("Camera2D")
 onready var compendium = get_node("/root/island/Ground/Compendium")
@@ -33,9 +34,34 @@ func _physics_process(delta):
 	vector.y = Input.get_action_strength("ui_down")-Input.get_action_strength("ui_up")
 	vector = vector.normalized()
 	
+	if Input.get_action_strength("ui_right"):
+		movetracker = 0
+		playermoves.play("WalkRight")
+
+	elif Input.get_action_strength("ui_left"):
+		movetracker = 1
+		playermoves.play("WalkLeft")
+	elif Input.get_action_strength("ui_up") and movetracker == 0:
+		playermoves.play("WalkRight")
+		movetracker = 0
+	elif Input.get_action_strength("ui_up") and movetracker == 1:
+		playermoves.play("WalkLeft")
+		movetracker = 1
+		
+	elif Input.get_action_strength("ui_down") and movetracker == 0:
+		playermoves.play("WalkRight")
+		movetracker = 0
+	elif Input.get_action_strength("ui_down") and movetracker == 1:
+		playermoves.play("WalkLeft")
+		movetracker = 1
+	else:
+		if movetracker == 1:
+			playermoves.play("stopleft")
+		elif movetracker == 0:
+			playermoves.play("stopright")
+			
 	
 	if vector!=Vector2.ZERO:
-		$AnimationPlayer.play("moving")
 		spawn_mob()
 		velocity=vector*max_speed
 	else:

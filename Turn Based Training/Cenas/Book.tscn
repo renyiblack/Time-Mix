@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Bookson/05.png" type="Texture" id=1]
 [ext_resource path="res://Bookson/08.png" type="Texture" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://EnemySprites/Toxodont Frame.png" type="Texture" id=29]
 [ext_resource path="res://EnemySprites/Caiuajara Dobruskii.png" type="Texture" id=30]
 [ext_resource path="res://EnemySprites/Sarcosuchus Imperator.png" type="Texture" id=31]
+[ext_resource path="res://EnemySprites/Smidolon Fatalis.png" type="Texture" id=32]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -407,7 +408,7 @@ clip_text = true
 [node name="sprite2" type="Sprite" parent="CanvasLayer/Page2"]
 position = Vector2( 179.5, 467.5 )
 scale = Vector2( 0.52, 0.502222 )
-texture = ExtResource( 21 )
+texture = ExtResource( 32 )
 
 [node name="NAME3" type="Label" parent="CanvasLayer/Page2"]
 margin_left = 670.0
