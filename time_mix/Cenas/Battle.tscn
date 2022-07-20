@@ -37,6 +37,7 @@
 [ext_resource path="res://Audio/Hit Normal Damage.mp3" type="AudioStream" id=35]
 [ext_resource path="res://Audio/Hit Super Effective.mp3" type="AudioStream" id=36]
 [ext_resource path="res://Fonts And Presets/boxcolor.tres" type="StyleBox" id=37]
+[ext_resource path="res://Fonts And Presets/LoRes21OTSerif-Regular.ttf" type="DynamicFontData" id=38]
 
 [sub_resource type="Theme" id=10]
 
@@ -56,14 +57,10 @@ border_width_right = 6
 border_width_bottom = 6
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="DynamicFontData" id=12]
-antialiased = false
-font_path = "res://alagard.ttf"
-
 [sub_resource type="DynamicFont" id=13]
 size = 77
 outline_color = Color( 0, 0, 0, 1 )
-font_data = SubResource( 12 )
+font_data = ExtResource( 38 )
 
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0, 0, 0, 0.698039 )
@@ -235,7 +232,7 @@ __meta__ = {
 
 [node name="ProgressBar" type="ProgressBar" parent="EnemyCont"]
 margin_right = 1200.0
-margin_bottom = 105.0
+margin_bottom = 104.0
 rect_pivot_offset = Vector2( 9, -82 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -251,9 +248,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -171.5
-margin_top = -36.5
+margin_top = -62.9675
 margin_right = 171.5
-margin_bottom = 36.5
+margin_bottom = 51.0325
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 13 )
 text = "HP: 25/50"
@@ -261,9 +258,9 @@ align = 1
 valign = 1
 
 [node name="Enemy" type="TextureRect" parent="EnemyCont"]
-margin_top = 109.0
+margin_top = 108.0
 margin_right = 1200.0
-margin_bottom = 775.0
+margin_bottom = 774.0
 rect_pivot_offset = Vector2( -646, 546 )
 size_flags_horizontal = 0
 texture = ExtResource( 1 )
@@ -315,7 +312,7 @@ custom_styles/pressed = ExtResource( 37 )
 custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
 action_mode = 0
-text = "Action"
+text = "AÇÃO"
 
 [node name="Guard" type="Button" parent="PlayerPanel/Actions"]
 margin_left = 310.0
@@ -337,7 +334,7 @@ custom_styles/hover = ExtResource( 37 )
 custom_styles/pressed = ExtResource( 37 )
 custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-text = "Guard"
+text = "BLOQUEAR"
 
 [node name="Run" type="Button" parent="PlayerPanel/Actions"]
 margin_left = 621.0
@@ -357,7 +354,7 @@ custom_styles/hover = ExtResource( 37 )
 custom_styles/pressed = ExtResource( 37 )
 custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-text = "Run"
+text = "CORRER"
 
 [node name="PlayerData" type="HBoxContainer" parent="PlayerPanel"]
 anchor_left = 0.5
@@ -371,15 +368,15 @@ margin_bottom = -43.5
 alignment = 1
 
 [node name="Label" type="Label" parent="PlayerPanel/PlayerData"]
-margin_top = 7.0
-margin_right = 103.0
-margin_bottom = 31.0
+margin_top = 1.0
+margin_right = 89.0
+margin_bottom = 38.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
 text = "PLAYER: "
 
 [node name="ProgressBar" type="ProgressBar" parent="PlayerPanel/PlayerData"]
-margin_left = 107.0
+margin_left = 93.0
 margin_right = 520.0
 margin_bottom = 39.0
 rect_pivot_offset = Vector2( 9, -82 )
@@ -398,9 +395,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -56.5
-margin_top = -12.0
+margin_top = -20.0
 margin_right = 56.5
-margin_bottom = 12.0
+margin_bottom = 17.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
 text = "HP: 25/50"
@@ -429,7 +426,7 @@ custom_styles/hover = ExtResource( 37 )
 custom_styles/pressed = ExtResource( 37 )
 custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-text = "Attack"
+text = "Atacar"
 
 [node name="Potions" type="Button" parent="PlayerPanel/ActionSelect"]
 margin_left = 313.0
@@ -447,7 +444,7 @@ custom_styles/hover = ExtResource( 37 )
 custom_styles/pressed = ExtResource( 37 )
 custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-text = "Potions"
+text = "Poção"
 
 [node name="Return" type="Button" parent="PlayerPanel/ActionSelect"]
 margin_left = 626.0
@@ -465,7 +462,7 @@ custom_styles/hover = ExtResource( 37 )
 custom_styles/pressed = ExtResource( 37 )
 custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-text = "Return"
+text = "Voltar"
 
 [node name="Potions" type="HBoxContainer" parent="PlayerPanel"]
 visible = false
@@ -475,11 +472,11 @@ margin_right = 1026.0
 margin_bottom = 150.0
 
 [node name="Potion2" type="Button" parent="PlayerPanel/Potions"]
-margin_right = 175.0
+margin_right = 183.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( -775, -231 )
 mouse_default_cursor_shape = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0.0392157, 1, 0.0313726, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -489,15 +486,15 @@ custom_styles/hover = ExtResource( 37 )
 custom_styles/pressed = ExtResource( 37 )
 custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-text = "Healing Potion"
+text = "Cura"
 
 [node name="Potion" type="Button" parent="PlayerPanel/Potions"]
-margin_left = 179.0
-margin_right = 341.0
+margin_left = 187.0
+margin_right = 371.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( -775, -231 )
 mouse_default_cursor_shape = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 0, 0.917647, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -507,15 +504,15 @@ custom_styles/hover = ExtResource( 37 )
 custom_styles/pressed = ExtResource( 37 )
 custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-text = "Poison Potion"
+text = "Veneno"
 
 [node name="Potion3" type="Button" parent="PlayerPanel/Potions"]
-margin_left = 345.0
-margin_right = 543.0
+margin_left = 375.0
+margin_right = 558.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( -775, -231 )
 mouse_default_cursor_shape = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0.00784314, 0.309804, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -525,15 +522,15 @@ custom_styles/hover = ExtResource( 37 )
 custom_styles/pressed = ExtResource( 37 )
 custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-text = "Blindness Potion"
+text = "Cegueira"
 
 [node name="Potion4" type="Button" parent="PlayerPanel/Potions"]
-margin_left = 547.0
-margin_right = 729.0
+margin_left = 562.0
+margin_right = 746.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( -775, -231 )
 mouse_default_cursor_shape = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -543,15 +540,15 @@ custom_styles/hover = ExtResource( 37 )
 custom_styles/pressed = ExtResource( 37 )
 custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-text = "Strengh Potion"
+text = "Força"
 
 [node name="Potion5" type="Button" parent="PlayerPanel/Potions"]
-margin_left = 733.0
-margin_right = 915.0
+margin_left = 750.0
+margin_right = 934.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( -775, -231 )
 mouse_default_cursor_shape = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 1, 0.937255, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -561,16 +558,14 @@ custom_styles/hover = ExtResource( 37 )
 custom_styles/pressed = ExtResource( 37 )
 custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-text = "Defense Potion"
+text = "Defesa"
 
 [node name="Return2" type="Button" parent="PlayerPanel/Potions"]
-margin_left = 919.0
+margin_left = 938.0
 margin_right = 1008.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( -220, -77 )
 mouse_default_cursor_shape = 2
-size_flags_horizontal = 3
-size_flags_vertical = 5
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -580,7 +575,7 @@ custom_styles/hover = ExtResource( 37 )
 custom_styles/pressed = ExtResource( 37 )
 custom_styles/focus = ExtResource( 37 )
 custom_styles/normal = SubResource( 5 )
-text = "Return"
+text = "Voltar"
 
 [node name="TextBox" type="Panel" parent="."]
 visible = false
@@ -639,19 +634,19 @@ frame = 2
 
 [node name="Poisoned" type="TextureRect" parent="."]
 visible = false
-margin_left = 470.0
-margin_top = 115.0
-margin_right = 1198.0
-margin_bottom = 623.0
+margin_left = 331.0
+margin_top = 61.0
+margin_right = 1059.0
+margin_bottom = 569.0
 rect_scale = Vector2( 0.11237, 0.0987193 )
 texture = ExtResource( 33 )
 
 [node name="Blinded" type="TextureRect" parent="."]
 visible = false
-margin_left = 426.0
-margin_top = 123.0
-margin_right = 776.0
-margin_bottom = 312.0
+margin_left = 415.0
+margin_top = 70.0
+margin_right = 765.0
+margin_bottom = 259.0
 rect_scale = Vector2( 0.162805, 0.179877 )
 texture = ExtResource( 25 )
 

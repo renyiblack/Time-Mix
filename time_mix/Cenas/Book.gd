@@ -17,27 +17,25 @@ func _ready():
 #	pass
 
 func _on_LEFT_pressed():
-	$CanvasLayer/LEFT.hide()
-	$CanvasLayer/RIGHT.hide()
-	$CanvasLayer/Page2.hide()
+	$CanvasLayer/Page1/LEFT.hide()
 	$CanvasLayer/Page1.hide()
 	anibook.show()
 	anibook.play("BookLeft")
 	yield(anibook, "animation_finished")
 	anibook.hide()
-	$CanvasLayer/Page1.show()
-	$CanvasLayer/LEFT.show()
-	$CanvasLayer/RIGHT.show()
+	$CanvasLayer/Page2.show()
+	$CanvasLayer/Page2/RIGHT.show()
 
 func _on_RIGHT_pressed():
-	$CanvasLayer/LEFT.hide()
-	$CanvasLayer/RIGHT.hide()
+	$CanvasLayer/Page2/RIGHT.hide()
 	$CanvasLayer/Page2.hide()
-	$CanvasLayer/Page1.hide()
 	anibook.show()
 	anibook.play("BookRight")
 	yield(anibook, "animation_finished")
 	anibook.hide()
-	$CanvasLayer/Page2.show()
-	$CanvasLayer/LEFT.show()
-	$CanvasLayer/RIGHT.show()
+	$CanvasLayer/Page1.show()
+	$CanvasLayer/Page1/LEFT.show()
+
+
+func _on_Exit_pressed():
+	get_tree().change_scene("res://Cenas/tutorial.tscn")

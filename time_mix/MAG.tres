@@ -1,10 +1,8 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[sub_resource type="DynamicFontData" id=12]
-antialiased = false
-font_path = "res://alagard.ttf"
+[ext_resource path="res://Fonts And Presets/LoRes21OTSerif-Regular.ttf" type="DynamicFontData" id=1]
 
 [resource]
 size = 25
 outline_color = Color( 0, 0, 0, 1 )
-font_data = SubResource( 12 )
+font_data = ExtResource( 1 )

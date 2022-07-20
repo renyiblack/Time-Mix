@@ -194,3 +194,14 @@ func _on_SpawnMob_body_entered(body):
 
 func _on_SpawnMob_body_exited(body):
 	generate_mob = false
+
+
+func _on_Book_pressed():
+		State.player_location = position
+		get_tree().change_scene("res://Cenas/Book.tscn")
+
+
+func _on_CollisionShape2D2_item_rect_changed():
+			State.player_location = position
+			get_tree().change_scene("res://Cenas/Battle.tscn")
+			print("mob spawned")
