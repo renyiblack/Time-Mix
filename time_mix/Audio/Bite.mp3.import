@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Bite.mp3-7fc26443dcf8028482175f99af387c6e.mp3str"
+
+[deps]
+
+source_file="res://Audio/Bite.mp3"
+dest_files=[ "res://.import/Bite.mp3-7fc26443dcf8028482175f99af387c6e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Safeguard.mp3-6787e502ef21c84c2dc29f2becba03c5.mp3str"
+
+[deps]
+
+source_file="res://Audio/Safeguard.mp3"
+dest_files=[ "res://.import/Safeguard.mp3-6787e502ef21c84c2dc29f2becba03c5.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

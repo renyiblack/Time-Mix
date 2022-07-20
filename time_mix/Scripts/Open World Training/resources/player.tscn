@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://materials/itch run-Sheet sheet.png" type="Texture" id=1]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+[node name="ItchRun-SheetSheet" type="Sprite" parent="."]
+position = Vector2( 603, 279 )
+texture = ExtResource( 1 )
+hframes = 24

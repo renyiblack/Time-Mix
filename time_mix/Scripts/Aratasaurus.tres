@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/BaseEnemy.gd" type="Script" id=1]
+[ext_resource path="res://EnemySprites/Aratasaurus Museunacionalis.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Aratasaurus"
+texture = ExtResource( 2 )
+health = 40
+damage = 8
+hit_rate = 80
+skills = [ 0, 1, 3 ]
+enemy_power_up = false

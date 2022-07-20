@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Heal Pulse.mp3-2e6a8cd12e9689318067f0c6a39a189d.mp3str"
+
+[deps]
+
+source_file="res://Audio/Heal Pulse.mp3"
+dest_files=[ "res://.import/Heal Pulse.mp3-2e6a8cd12e9689318067f0c6a39a189d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

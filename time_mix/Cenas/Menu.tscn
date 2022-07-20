@@ -1,0 +1,290 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://MenuGIF/frame_06_delay-0.05s.jpg" type="Texture" id=1]
+[ext_resource path="res://MenuGIF/TribalGaramond-xvWj.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Cenas/Menu.gd" type="Script" id=3]
+[ext_resource path="res://MenuGIF/frame_07_delay-0.05s.jpg" type="Texture" id=4]
+[ext_resource path="res://MenuGIF/frame_03_delay-0.05s.jpg" type="Texture" id=5]
+[ext_resource path="res://MenuGIF/frame_02_delay-0.05s.jpg" type="Texture" id=6]
+[ext_resource path="res://MenuGIF/frame_01_delay-0.05s.jpg" type="Texture" id=7]
+[ext_resource path="res://MenuGIF/frame_00_delay-0.05s.jpg" type="Texture" id=8]
+[ext_resource path="res://MenuGIF/frame_04_delay-0.05s.jpg" type="Texture" id=9]
+[ext_resource path="res://MenuGIF/frame_05_delay-0.05s.jpg" type="Texture" id=10]
+[ext_resource path="res://MenuGIF/frame_09_delay-0.05s.jpg" type="Texture" id=11]
+[ext_resource path="res://MenuGIF/frame_08_delay-0.05s.jpg" type="Texture" id=12]
+[ext_resource path="res://MenuGIF/MenuSfx.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Animações/WhiteTextFade.tres" type="Animation" id=14]
+[ext_resource path="res://SoundOn.png" type="Texture" id=15]
+[ext_resource path="res://SoundOff.png" type="Texture" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+outline_color = Color( 0.580392, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFontData" id=2]
+antialiased = false
+font_path = "res://alagard.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 39
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+draw_center = false
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 9.03
+} ]
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.733333, 0.313726, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/NEWGAME:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/Load:custom_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/EXIT:custom_colors/font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CanvasLayer/SoundOn:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CanvasLayer/SoundOn:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "TextFade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 1, 0.376471, 0, 1 ) ]
+}
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SoundOn" type="TextureButton" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 907.0
+margin_top = 32.0
+margin_right = 883.0
+margin_bottom = 512.0
+rect_scale = Vector2( 0.0979409, 0.0912331 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 15 )
+
+[node name="SoundOff" type="TextureButton" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 907.0
+margin_top = 32.0
+margin_right = 883.0
+margin_bottom = 512.0
+rect_scale = Vector2( 0.0979409, 0.0912331 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 18.0
+margin_top = 3.0
+margin_right = 546.0
+margin_bottom = 138.0
+custom_colors/font_color = Color( 0.733333, 0.313726, 0, 0 )
+custom_fonts/font = SubResource( 1 )
+text = "Time Mix"
+
+[node name="NEWGAME" type="Button" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 280.0
+margin_top = -78.0
+margin_right = 484.0
+margin_bottom = 9.0
+rect_pivot_offset = Vector2( 203, 44 )
+focus_neighbour_top = NodePath("../EXIT")
+focus_neighbour_bottom = NodePath("../Load")
+custom_colors/font_color_focus = Color( 1, 0.431373, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+custom_colors/font_color_hover = Color( 1, 0.494118, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/normal = SubResource( 5 )
+text = "NEW GAME"
+
+[node name="Load" type="Button" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 280.0
+margin_top = 27.0
+margin_right = 484.0
+margin_bottom = 114.0
+rect_pivot_offset = Vector2( 203, 44 )
+focus_neighbour_top = NodePath("../NEWGAME")
+focus_neighbour_bottom = NodePath("../EXIT")
+custom_colors/font_color_focus = Color( 1, 0.431373, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 0 )
+custom_colors/font_color_hover = Color( 1, 0.470588, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/normal = SubResource( 5 )
+text = "LOAD"
+
+[node name="EXIT" type="Button" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 280.0
+margin_top = 138.0
+margin_right = 484.0
+margin_bottom = 225.0
+rect_pivot_offset = Vector2( -568, -183 )
+focus_neighbour_top = NodePath("../Load")
+focus_neighbour_bottom = NodePath("../NEWGAME")
+mouse_default_cursor_shape = 2
+custom_colors/font_color_focus = Color( 1, 0.431373, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+custom_colors/font_color_hover = Color( 1, 0.431373, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/normal = SubResource( 5 )
+text = "EXIT"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 510.5, 299.5 )
+scale = Vector2( 0.97619, 1.10556 )
+frames = SubResource( 6 )
+frame = 2
+playing = true
+
+[node name="MenuSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -30.783
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 9 )
+anims/TextFade = SubResource( 10 )
+anims/WhiteTextFade = ExtResource( 14 )
+
+[connection signal="pressed" from="CanvasLayer/SoundOn" to="." method="_on_SoundOn_pressed"]
+[connection signal="pressed" from="CanvasLayer/SoundOff" to="." method="_on_SoundOff_pressed"]
+[connection signal="pressed" from="CanvasLayer/NEWGAME" to="." method="_on_NEWGAME_pressed"]
+[connection signal="pressed" from="CanvasLayer/EXIT" to="." method="_on_EXIT_pressed"]
