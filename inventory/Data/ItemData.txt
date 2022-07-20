@@ -1,0 +1,10 @@
+{
+  "graveto": {
+    "Quantity": 3,
+    "Categoty": "resource",
+  },
+  "folha": {
+    "Quantidade": 3,
+    "Category": "resourse",
+  },
+}
