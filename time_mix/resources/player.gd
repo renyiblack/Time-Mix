@@ -28,7 +28,10 @@ func _physics_process(delta):
 			if(alpha>=1):
 				# collected
 				(plant_sprite as ColorRect).color.a=0
-				
+	
+	if(Input.is_action_just_pressed("ui_inventory")):
+			State.player_location = position
+			get_tree().change_scene("res://Cenas/inventory.tscn")
 	
 	vector.x = Input.get_action_strength("ui_right")-Input.get_action_strength("ui_left")
 	vector.y = Input.get_action_strength("ui_down")-Input.get_action_strength("ui_up")

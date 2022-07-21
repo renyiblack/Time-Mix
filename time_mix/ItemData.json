@@ -1,0 +1,30 @@
+{
+  "graveto": {
+    "Quantity": 20,
+    "Category": "resource",
+  },
+  "folha": {
+    "Quantity": 20,
+    "Category": "resource",
+  },
+  "ragepot": {
+    "Quantity": 5,
+    "Category": "potion",
+  },
+  "emptypot": {
+    "Quantity": 12,
+    "Category": "resource",
+  },
+  "defpot": {
+    "Quantity": 5,
+    "Category": "potion",
+  },
+  "blueflower": {
+    "Quantity": 30,
+    "Category": "resource",
+  },
+  "redflower": {
+    "Quantity": 30,
+    "Category": "resource",
+  },
+}

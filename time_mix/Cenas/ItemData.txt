@@ -1,0 +1,14 @@
+{
+  "graveto": {
+    "Quantity": 20,
+    "Category": "resource",
+  },
+  "folha": {
+    "Quantidade": 20,
+    "Category": "resource",
+  },
+  "ragepot": {
+    "Quantity": 5,
+    "Category": "potion",
+  },
+}

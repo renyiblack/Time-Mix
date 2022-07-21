@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/y2meta.com-Terraria Music - Jungle-(128kbps).ogg-073cf978f155553a4ce19048edd5a89d.oggstr"
+
+[deps]
+
+source_file="res://Cenas/y2meta.com-Terraria Music - Jungle-(128kbps).ogg"
+dest_files=[ "res://.import/y2meta.com-Terraria Music - Jungle-(128kbps).ogg-073cf978f155553a4ce19048edd5a89d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
